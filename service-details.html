@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Keep your styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(245, 245, 245);
+            color: rgb(0, 0, 0);
+            font-family: 'Poppins', sans-serif;
+            padding: 2rem;
+        }
+        .service-detail {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+        }
+        .service-detail h1 {
+            font-size: 4rem;
+            color: #ff4e4e;
+            margin-bottom: 2rem;
+        }
+        .service-detail p {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .btn-contact {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 3rem;
+            font-size: 1.8rem;
+            border-radius: 3rem;
+            background: transparent;
+            color: #ff4e4e;
+            border: 2px solid #ff4e4e;
+            transition: 0.3s;
+        }
+        .btn-contact:hover {
+            background: #ff4e4e;
+            color: black;
+            box-shadow: 0 0 20px #ff4e4e;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<header>
+<body>
+    <a href="index.html" > 
+        <img src="logo.png" id="logo" alt="LOGO">
+    </a>
+    <nav>
+        <a href="index.html" > Home</a>
+        <a href="service.html" class="active" >Services</a>
+        <a href="skills.html" >Skills</a>
+        <a href="#" >Education</a>
+        <a href="#" >Experience</a>
+        <a href="#" >Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+    <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
+    <div class="service-detail">
+        <h1 id="service-title">Service Title</h1>
+        <p id="service-description">Loading description...</p>
+
+        <a href="contact.html" class="btn-contact">Contact Me</a>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const service = params.get('service');
+
+        const servicesData = {
+            logo: {
+                title: "Logo Design",
+                description: "A great logo is the foundation of your brand. It speaks louder than words and leaves a strong impression. I create logos that reflect the soul of your brand — simple, memorable, and timeless."
+            },
+            poster: {
+                title: "Poster Design",
+                description: "A poster is a window into your event, your campaign, your brand. I design posters that command attention, tell a story, and move people to action."
+            },
+            social: {
+                title: "Social Media Post",
+                description: "In today's world, your brand lives online. I design social media posts that are attractive, strategic, and made to boost engagement on every platform."
+            },
+            brand: {
+                title: "Brand Identity",
+                description: "A full brand identity goes beyond just a logo. It’s the complete visual language that communicates your brand’s message, emotion, and promise to your audience."
+            },
+            flyer: {
+                title: "Flyer Design",
+                description: "Flyers are still one of the best tools for local marketing. I create flyers that are beautifully designed, easy to read, and effective in capturing attention."
+            },
+            product: {
+                title: "Product Manipulation",
+                description: "High-end product manipulation transforms your product images into premium visuals that stand out in ads, e-commerce stores, and promotions."
+            }
+        };
+
+        if(service && servicesData[service]) {
+            document.getElementById('service-title').textContent = servicesData[service].title;
+            document.getElementById('service-description').textContent = servicesData[service].description;
+        } else {
+            document.getElementById('service-title').textContent = "Service Not Found";
+            document.getElementById('service-description').textContent = "Sorry, the service you're looking for does not exist.";
+        }
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        });
+
+    </script>
+
+</body>
+</html>

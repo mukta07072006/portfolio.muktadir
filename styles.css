@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #ffffff;
+    color: #000000;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 10%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #ff4e4e;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    margin-left: 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000000;
+    transition: 0.3s;
+    position: relative;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff4e4e;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff4e4e;
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+section {
+    padding: 8rem 10% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    min-height: 100vh;
+}
+
+.home-img {
+    max-width: 800px; /* You can adjust */
+}
+
+.home-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* MAGIC effect like the example you shared */
+    cursor: pointer;
+
+}
+
+
+
+.home-content {
+    max-width: 600px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.home-content h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.home-content h1 span {
+    color: #ff4e4e;
+}
+
+.home-content h3 {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    color: #000000;
+    margin-bottom: 2.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 1.5rem;
+    background: transparent;
+    border: 2px solid #ff4e4e;
+    color: #ff4e4e;
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #ff4e4e;
+    color: #ffffff;
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 0 15px #ff4e4e;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    background: transparent;
+    color: #ff4e4e;
+    font-weight: 600;
+    border: 2px solid #ff4e4e;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #ff4e4e;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #ff4e4e;
+}
+
+.typing-text {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #ff4e4e;
+    margin-bottom: 2rem;
+}
+#typed-text {
+    color: #ff4e4e;
+}
+.typing-text span::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 995px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #dbdbdb;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+
+    .home {
+        flex-direction: column;
+        padding-top: 10rem;
+    }
+
+    .home-img img {
+        width: 60vw;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+}
+.services {
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    padding: 5rem 9% 5rem;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.heading {
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5rem;
+}
+
+.heading span {
+    color: #ff4e4e;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 4rem;
+}
+
+.service-box {
+    background: #ff4e4e;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(183, 75, 75, 0.2);
+}
+
+.service-box:hover {
+    border-color: #ff4e4e;
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #ff4e4e;
+}
+
+.service-box i {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.service-box h3 {
+    font-size: 2.4rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.service-box p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+.skill-card {
+    background: #ff4e4e;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(183, 75, 75, 0.2);
+}
+
+.skill-card:hover {
+    border-color: #ff4e4e;
+    transform: translateY(10px);
+    box-shadow: 0 0 25px #ff4e4e;
+}
+.skill-card i {
+    font-size: 4rem;
+    color: #ff4e4e;
+    margin-bottom: 2rem;
+}
+
+.skill-card h3 {
+    font-size: 2.4rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+.hamburger {
+    display: none;
+    font-size: 2.8rem;
+    color: #ff4e4e;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    nav {
+      display: none; /* Hide normal nav */
+      flex-direction: column;
+      background: #dbdbdb;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 200px;
+      border: 2px solid #ff4e4e;
+      border-radius: 10px;
+      padding: 20px;
+    }
+  
+    nav.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  .btn2 {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn2:hover {
+    background: #ffffff;
+    color: #ff4e4e;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #bbbbbb;
+}
+#footer {
+    background-color: #0e0e0e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+#logo {
+    top: 10px;         /* Distance from the top of the page */
+    left: 10px;        /* Distance from the left of the page */
+    width: 193px;      /* Resize the logo width */
+    height: 64px;      /* Maintain the aspect ratio */
+}
+#footer-logo {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) invert(1); 
+}
+
+@media (max-width: 600px) {
+    #footer-logo {
+        width: 50px;   /* Smaller logo on smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    #logo {
+        width: 70px;  /* Make logo smaller on smaller screens */
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Moshud Muktadir</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" > 
+        <img src="logo.png" id="logo" alt="LOGO">
+    </a>
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="service.html" >Services</a>
+            <a href="skills.html" >Skills</a>
+            <a href="#" >Education</a>
+            <a href="#" >Experience</a>
+            <a href="#" >Contact</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="final.png" alt="Moshud Muktadir">
+        </div>        
+        <div class="home-content">
+            <br> <br><br> <br>
+            <h1>Hi, It's <span>Moshud Muktadir</span></h1>
+            <h3 class="typing-text">I am a <span id="typed-text"></span></h3>
+            <p>I am a passionate creative designer with over 3 years of experience, specializing in logo design and branding. Throughout my career, I’ve had the opportunity to collaborate with various brands, helping them establish their visual identity and stand out in the market. My approach combines creativity with a deep understanding of brand strategy, ensuring every design is not only visually striking but also aligned with the brand’s core message. I’m always excited to bring fresh ideas to life and look forward to working with clients who are ready to elevate their brand’s presence.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a> <br>
+            </div>
+            <br>
+            <a href="#" class="btn">Let's Create Something Great Together</a>
+        </div>
+    </section>
+
+
+    <script>
+        const textArray = [
+            "Brand Identity Designer",
+            "Logo Designer",
+            "Poster Creator",
+            "Social Media Expert",
+            "Product Image Editor"
+        ];
+        let index = 0;
+        let charIndex = 0;
+        let currentText = '';
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const erasingSpeed = 50;
+        const delayBetween = 2000;
+    
+        const typedText = document.getElementById("typed-text");
+    
+        function type() {
+            if (index >= textArray.length) index = 0;
+            currentText = textArray[index];
+    
+            if (!isDeleting) {
+                typedText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, delayBetween);
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            } else {
+                typedText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    index++;
+                }
+                setTimeout(type, erasingSpeed);
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        });
+
+    </script>
+    
+</body>
+</html>
