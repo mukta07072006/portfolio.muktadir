@@ -84,7 +84,7 @@ nav a.active::after {
 }
 
 section {
-    padding: 8rem 10% 5rem;
+    padding: 5rem 10% 5rem;
 }
 
 .home {
@@ -169,6 +169,8 @@ section {
     font-weight: 600;
     border: 2px solid #ff4e4e;
     transition: all 0.3s ease;
+    gap: 5rem;
+    margin-right: 1.5rem;
 }
 
 .btn:hover {
@@ -223,11 +225,11 @@ section {
         top: 100%;
         right: 0;
         width: 100%;
-        background: #dbdbdb;
+        background: #f5f5f5;
         display: none;
         flex-direction: column;
         align-items: center;
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border-top: 1px solid rgba(206, 206, 206, 0.1);
     }
 
     nav.active {
@@ -282,35 +284,35 @@ section {
 }
 
 .service-box {
-    background: #ff4e4e;
+    background: #ffffff;
     padding: 4rem 2rem;
     border-radius: 2rem;
-    border: 2px solid transparent;
+    color: #ff4e4e;
+    border: 2px solid #ff4e4e;
     transition: 0.4s ease;
-    box-shadow: 0 0 15px rgba(183, 75, 75, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .service-box:hover {
     border-color: #ff4e4e;
+    background: #ff4e4e;
+    color: #ffffff;
     transform: translateY(-10px);
-    box-shadow: 0 0 25px #ff4e4e;
+    box-shadow: 0 0 25px #d64b4b;
 }
 
 .service-box i {
     font-size: 4rem;
-    color: #ffffff;
     margin-bottom: 2rem;
 }
 
 .service-box h3 {
     font-size: 2.4rem;
-    color: white;
     margin-bottom: 1.5rem;
 }
 
 .service-box p {
     font-size: 1.6rem;
-    color: #ffffff;
     margin-bottom: 2rem;
     padding: 0 1rem;
 }
@@ -380,7 +382,7 @@ section {
     padding: 1rem 3rem;
     border-radius: 3rem;
     font-size: 1.6rem;
-    background: transparent;
+    background: #ff4e4e;
     color: #ffffff;
     font-weight: 600;
     border: 2px solid #ffffff;
@@ -440,8 +442,266 @@ section {
         width: 50px;   /* Smaller logo on smaller screens */
     }
 }
-@media (max-width: 600px) {
-    #logo {
-        width: 70px;  /* Make logo smaller on smaller screens */
+
+.logo {
+    max-width: 180px; 
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      max-width: 140px; 
     }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      max-width: 120px; 
+    }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+  section.skills {
+    padding: 8rem 5%;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .skills-title {
+    font-size: 6rem;
+    margin-bottom: 5rem;
+  }
+  .skills-title span {
+    color: #ff4e4e;
+  }
+
+  .skill-category {
+    margin-top: 5rem;
+  }
+
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+.progress-bar {
+width: 100%;
+height: 10px;
+background: #ffd0d0;
+border-radius: 5px;
+margin-top: 1rem;
+overflow: hidden;
+margin-bottom: 1rem;
+}
+
+.progress {
+height: 100%;
+background: #ffffff;
+width: 0; /* Animate later */
+transition: width 2s ease;
+}
+
+.progress-text {
+font-size: 1.4rem;
+color: #ffffff;
+font-weight: 500;
+}
+
+
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate {
+    opacity: 0;
+    animation: fadeUp 1s forwards;
+  }
+
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  .delay-5 { animation-delay: 1s; }
+  .delay-6 { animation-delay: 1.2s; }
+  .experience-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .experience-section span {
+  color: #000000;
+  }
+
+
+  .experience-section h1 {
+    font-size: 4rem;
+    color: #ff4e4e;
+    margin-bottom: 4rem;
+    animation: fadeDown 1s ease forwards;
+  }
+
+  .experience-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .experience-card {
+    background-color: #ff4e4e;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+  }
+
+  .experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff4e4e;
+  }
+
+  .experience-card i {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .experience-card p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  .experience-card h1 {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  @keyframes fadeDown {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .experience-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .experience-card {
+      width: 90%;
+    }
+  }
+  .contact {
+    min-height: 100vh;
+    padding: 5rem 9%;
+    background-color: rgb(255, 255, 255);
+    color: #ff4e4e;
+}
+
+.contact .heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+.contact .heading span {
+    color: #ff4e4e;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-box {
+    display: flex;
+    gap: 2rem;
+}
+
+.input-box input {
+    width: 100%;
+    align: center;
+    display: inline-block;
+padding: 1rem 3rem;
+border-radius: 3rem;
+font-size: 1.6rem;
+background: transparent;
+color: #ff4e4e;
+font-weight: 600;
+border: 2px solid #ff4e4e;
+transition: all 0.3s ease;
+}
+
+textarea {
+    display: inline-block;
+padding: 1rem 3rem;
+border-radius: 3rem;
+font-size: 1.6rem;
+background: transparent;
+color: #ff4e4e;
+font-weight: 600;
+border: 2px solid #ff4e4e;
+transition: all 0.3s ease;
+gap: 3rem;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-box {
+        flex-direction: column;
+    }
+}
+.info-box {
+    background: #ffffff;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+    color: #ff4e4e;
+    border: 2px solid #ff4e4e;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-box:hover {
+
+    transform: translateY(-10px);
+    box-shadow: 0 0 5px #d64b4b;
+}
+
+
+.info-box h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-box p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+.info-box img {
+   justify-content: center;
 }
